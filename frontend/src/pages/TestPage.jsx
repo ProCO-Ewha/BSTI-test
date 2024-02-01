@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom';
 const TestPage = () => {
   const navigate = useNavigate();
   const [answers, setAnswers] = useState({
+    A: 0,
+    D: 0,
     E: 0,
-    I: 0,
+    L: 0,
+    T: 0,
     S: 0,
     N: 0,
-    T: 0,
     F: 0,
-    J: 0,
-    P: 0,
   });
 
   const handleAnswerSelection = (question, answer) => {
@@ -31,7 +31,7 @@ const TestPage = () => {
 
   return (
     <div>
-      <h1>MBTI Test</h1>
+      <h1>BSTI Test</h1>
       {/* Render test questions and answer buttons */}
       <button onClick={submitTest}>Submit Test</button>
     </div>

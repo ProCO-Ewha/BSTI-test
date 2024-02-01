@@ -5,7 +5,7 @@ const MainPage = () => {
   return (
     <div>
       <h1>Main Page</h1>
-      <p>Welcome to the MBTI Test Service</p>
+      <p>Welcome to the BSTI Test</p>
       <Link to="/test">Start Test</Link>
     </div>
   );
