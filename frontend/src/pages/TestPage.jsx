@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import QuestionData from '../QuestionData.json';
 import AnswerBtn from '../components/AnswerBtn';
 import ResultPage from './ResultPage';
-import '../styles/TestPage.css'; // CSS 파일 import
+import '../styles/TestPage.css';
 
 const TestPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -38,13 +38,17 @@ const TestPage = () => {
     return <ResultPage answerScores={answerScores} />;
   }
 
+  const currentQuestionData = QuestionData[currentQuestion];
+  const backgroundImage = currentQuestionData.backgroundImage;
+
   return (
-    <div className="test-page-container"> {/* 클래스 추가 */}
-      <p className="question-text"> {/* 클래스 추가 */}
-        {QuestionData[currentQuestion].question}
+    <div className="test-page-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <p className="question-text">
+        {currentQuestionData.question}
       </p>
-      
-      {QuestionData[currentQuestion].answers.map((answer) => (
+      <div className="overlay"></div>
+
+      {currentQuestionData.answers.map((answer) => (
         <div key={answer.id}>
           <AnswerBtn
             text={answer.text}

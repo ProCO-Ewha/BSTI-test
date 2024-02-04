@@ -5,7 +5,8 @@
       "answers": [
         { "id": 1, "text": "선빵필승! 적이 보이면 무조건 공격부터 해보자.", "type":"a" },
         { "id": 2, "text": "안정이 우선! 방어구와 음식 먼저 구해보자.", "type":"d" }
-      ]
+      ],
+      "backgroundImage": "../images/Q1.png"
     },
     {
       "id": 2,
@@ -13,7 +14,8 @@
       "answers": [
         { "id": 3, "text": "초반에 달려보자. 초반 공격력이 높지만 방어력은 낮은 캐릭터", "type":"a" },
         { "id": 4, "text": "후반을 도모하자. 초반 방어력이 높지만 공격력은 낮은 캐릭터", "type":"d" }
-      ]
+      ],
+      "backgroundImage": "../images/Q2.png"
     },
     {
       "id": 3,
@@ -21,7 +23,8 @@
       "answers": [
         { "id": 5, "text": "데미지가 세지만 금방 깨질 수 있는 무기", "type":"e" },
         { "id": 6, "text": "데미지가 약하지만 튼튼한 무기", "type":"l" }
-      ]
+      ],
+      "backgroundImage": "../images/Q3.png"
     },
     {
       "id": 4,
@@ -31,7 +34,8 @@
         { "id": 8, "text": "둔탁한 야구배트", "type":"n" },
         { "id": 9, "text": "날렵한 표창", "type":"f" },
         { "id": 10, "text": "정교한 활", "type":"f" }
-      ]
+      ],
+      "backgroundImage": "../images/Q4.png"
     },
     {
       "id": 5,
@@ -39,7 +43,8 @@
       "answers": [
         { "id": 11, "text": "함께 협력하면 더 나은 결과를 얻을 수 있을 거 같아! 동맹을 맺는다.", "type":"t" },
         { "id": 12, "text": "이 섬에선 모두가 경쟁자야. 동맹을 거부한다.", "type":"s" }
-      ]
+      ],
+      "backgroundImage": "../images/Q5.png"
     },
     {
       "id": 6,
@@ -47,7 +52,8 @@
       "answers": [
         { "id": 13, "text": "도망치자! 너무 강한 상대다.", "type":"a" },
         { "id": 14, "text": "맞서 싸우자! 위클라인을 죽여 희귀 아이템을 구해야겠다.", "type":"d" }
-      ]
+      ],
+      "backgroundImage": "../images/Q6.png"
     },
     {
       "id": 7,
@@ -55,7 +61,8 @@
       "answers": [
         { "id": 15, "text": "한번에 큰 데미지를 주는 투척 스킬", "type":"e" },
         { "id": 16, "text": "차곡차곡 숙련도를 쌓으면 무기가 진급하는 프로모션 스킬", "type":"l" }
-      ]
+      ],
+      "backgroundImage": "../images/Q7.png"
     },
     {
       "id": 8,
@@ -63,7 +70,8 @@
       "answers": [
         { "id": 17, "text": "해킹해보자. 인생은 한방이지! ", "type":"e" },
         { "id": 18, "text": "위험한 일일 수 있어. 그냥 넘어가자.", "type":"l" }
-      ]
+      ],
+      "backgroundImage": "../images/Q8.png"
     }
   ]
   
