@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BtnComponent from '../components/BtnComponent';
 
 const ResultPage = () => {
-  // Fetch and display BSTI result logic
+  // Fetch and display MBTI result logic
 
   return (
     <div>
       <h1>Result Page</h1>
-      {/* Display BSTI result */}
-      <Link to="/">Back to Main Page</Link>
+      {/* Display MBTI result */}
+      <Link to="/">
+        <BtnComponent label="테스트 다시하기" />
+      </Link>
     </div>
   );
 };
