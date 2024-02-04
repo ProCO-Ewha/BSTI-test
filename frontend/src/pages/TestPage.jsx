@@ -1,39 +1,55 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import QuestionData from '../QuestionData.json';
+import AnswerBtn from '../components/AnswerBtn';
+import ResultPage from './ResultPage';
 
 const TestPage = () => {
-  const navigate = useNavigate();
-  const [answers, setAnswers] = useState({
-    A: 0,
-    D: 0,
-    E: 0,
-    L: 0,
-    T: 0,
-    S: 0,
-    N: 0,
-    F: 0,
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answerScores, setAnswerScores] = useState({
+    a: 0,
+    d: 0,
+    e: 0,
+    l: 0,
+    t: 0,
+    s: 0,
+    n: 0,
+    f: 0,
   });
+  const navigate = useNavigate();
 
-  const handleAnswerSelection = (question, answer) => {
-    setAnswers((prevAnswers) => ({
-      ...prevAnswers,
-      [question]: prevAnswers[question] + answer,
+  const handleAnswerClick = (answerType) => {
+    // 선택된 답변의 타입에 따라 해당 타입의 변수에 +1
+    setAnswerScores((prevScores) => ({
+      ...prevScores,
+      [answerType]: prevScores[answerType] + 1,
     }));
+
+    // 다음 질문으로 이동
+    if (currentQuestion < QuestionData.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      // 마지막 질문인 경우 결과 페이지로 이동
+      navigate('/result');
+    }
   };
 
-  const submitTest = () => {
-    // Submit test logic (axios request, etc.)
-    // Redirect to result page
-    navigate('/result');
-  };
-
-  // Render test questions and answer buttons
+  if (currentQuestion >= QuestionData.length) {
+    // 모든 질문에 대한 답변이 완료된 경우 결과 페이지로 이동
+    return <ResultPage answerScores={answerScores} />;
+  }
 
   return (
     <div>
-      <h1>BSTI Test</h1>
-      {/* Render test questions and answer buttons */}
-      <button onClick={submitTest}>Submit Test</button>
+      <p>{QuestionData[currentQuestion].question}</p>
+
+      {QuestionData[currentQuestion].answers.map((answer) => (
+        <AnswerBtn
+          key={answer.id}
+          text={answer.text}
+          onClick={() => handleAnswerClick(answer.type)}
+        />
+      ))}
     </div>
   );
 };
