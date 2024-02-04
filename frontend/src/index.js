@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import TestPage from './pages/TestPage';
 import ResultPage from './pages/ResultPage';
+import './styles/global.css';
 
 const App = () => {
   return (

@@ -1,0 +1,15 @@
+/* TestPage.css */
+
+.test-page-container {
+  max-width: 372px;
+  margin: 0 auto;
+}
+
+.question-text {
+  font-size: 27px;
+  color: #333;
+  font-weight: bold;
+  width: 100%;
+  max-width: 372px;
+  margin: 0 auto;
+}

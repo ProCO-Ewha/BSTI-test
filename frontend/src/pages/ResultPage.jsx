@@ -7,8 +7,10 @@ const ResultPage = () => {
 
   return (
     <div>
-      <h1>Result Page</h1>
+      <p>당신과 어울리는 블랙서바이벌 캐릭터는?</p>
+
       {/* Display MBTI result */}
+
       <Link to="/">
         <BtnComponent label="테스트 다시하기" />
       </Link>

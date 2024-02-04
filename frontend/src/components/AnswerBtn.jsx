@@ -7,12 +7,14 @@ const AnswerBtn = ({ text, onClick }) => {
       style={{
         width: '380px',
         height: '65px',
-        backgroundColor: '#3498db',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         color: '#fff',
         border: 'none',
-        borderRadius: '4px',
-        margin: '5px',
+        borderRadius: '5px',
+        margin: '10px',
         cursor: 'pointer',
+        fontSize: '19px',
+        fontWeight: 'bold',
       }}
       onClick={onClick}
     >
