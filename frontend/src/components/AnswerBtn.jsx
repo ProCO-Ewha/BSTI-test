@@ -13,7 +13,7 @@ const AnswerBtn = ({ text, onClick }) => {
         borderRadius: '5px',
         margin: '10px',
         cursor: 'pointer',
-        fontSize: '19px',
+        fontSize: '15px',
         fontWeight: 'bold',
       }}
       onClick={onClick}

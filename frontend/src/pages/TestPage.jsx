@@ -48,6 +48,7 @@ const TestPage = () => {
       </p>
       <div className="overlay"></div>
 
+      <div className="answerline">
       {currentQuestionData.answers.map((answer) => (
         <div key={answer.id}>
           <AnswerBtn
@@ -56,6 +57,7 @@ const TestPage = () => {
           />
         </div>
       ))}
+      </div>
     </div>
   );
 };
