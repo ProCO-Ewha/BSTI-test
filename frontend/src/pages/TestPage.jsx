@@ -40,23 +40,34 @@ const TestPage = () => {
 
   const currentQuestionData = QuestionData[currentQuestion];
   const backgroundImage = currentQuestionData.backgroundImage;
-
+  
   return (
     <div className="test-page-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <p className="question-text">
         {currentQuestionData.question}
       </p>
+
+      {currentQuestionData.ExplainImage && (
+        <div className="explain-image-container">
+          <img
+            src={currentQuestionData.ExplainImage}
+            alt={`Explanation for Question ${currentQuestion + 1}`}
+            className="explain-image"
+          />
+        </div>
+      )}
+
       <div className="overlay"></div>
 
       <div className="answerline">
-      {currentQuestionData.answers.map((answer) => (
-        <div key={answer.id}>
-          <AnswerBtn
-            text={answer.text}
-            onClick={() => handleAnswerClick(answer.type)}
-          />
-        </div>
-      ))}
+        {currentQuestionData.answers.map((answer) => (
+          <div key={answer.id}>
+            <AnswerBtn
+              text={answer.text}
+              onClick={() => handleAnswerClick(answer.type)}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
