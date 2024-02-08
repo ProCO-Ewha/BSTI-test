@@ -13,6 +13,17 @@ const ResultPage = () => {
     mainQuote: '캐릭터의 메인 대사가 여기에 들어갑니다.',
   };
 
+  const handleCopyLink = () => {
+    const currentURL = window.location.href;
+    navigator.clipboard.writeText(currentURL)
+      .then(() => {
+        alert('링크가 클립보드에 복사되었습니다.');
+      })
+      .catch((error) => {
+        console.error('링크 복사 중 오류:', error);
+      });
+  };
+
   return (
     <div className="result-page-container">
     <div className="all-contents">
@@ -27,9 +38,14 @@ const ResultPage = () => {
           <p className="character-description">{characterData.description}</p>
         </div>
 
-      <Link to="/">
-      <BtnComponent label="테스트 다시하기" />
-      </Link>
+        <div className="btn-group">
+            <Link to="/">
+              <BtnComponent label="테스트 다시하기" />
+            </Link>
+            <div style={{ margin: '20px' }}></div>
+            <BtnComponent label="테스트 공유하기" onClick={handleCopyLink} />
+        </div>
+
       </div>
       </div>
     </div>
