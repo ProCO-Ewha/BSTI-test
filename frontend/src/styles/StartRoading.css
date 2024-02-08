@@ -1,0 +1,24 @@
+/* styles/StartRoading.css */
+
+.main-page-container {
+  position: relative;
+  width: 440px;
+  height: 100vh; /* 100% 뷰포트 높이 */
+  overflow: hidden; /* 내용이 넘치는 경우 가림 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-image {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: -1; /* 배경 이미지를 컨텐츠 뒤에 둠 */
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #fff;
+}

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BtnComponent from '../components/BtnComponent';
-import MainPageBackground from '../start.png'; // 이미지 경로에 맞게 수정
+import MainPageBackground from '../start.png';
 import '../styles/MainPage.css';
 
 const MainPage = () => {
@@ -19,11 +19,11 @@ const MainPage = () => {
         </p>
 
         <div className="btn-container">
-          <Link to="/test">
-            <BtnComponent label="테스트 시작" />
-          </Link>
-        </div>
+        <Link to="/startloading">
+          <BtnComponent label="테스트 시작" />
+        </Link>
       </div>
+    </div>
     </div>
   );
 };
