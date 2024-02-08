@@ -1,0 +1,64 @@
+/* styles/ResultPage.css */
+
+.result-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #D9EFF6;
+    background: linear-gradient(to bottom, #5F0505, #1D1D1D);
+    position: relative;
+    width: 440px;
+  }
+
+  .all-contents {
+    margin-top: 60px;
+    margin-bottom: 60px; /* 윈도우 하단 간격 */
+  }
+  
+  .yours {
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #FE213C;
+    margin: 0;
+  }
+  
+  .character-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .character-image {
+    width: 210px;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .character-details {
+    width: 350px;
+    max-width: 100%;
+    color: #979797;
+    border: 1px solid #F2F1DA;
+    margin-bottom: 30px;
+    border-radius: 4px;
+  }
+  
+  .character-name {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 10px;
+    text-shadow: 5px 5px 6px rgb(36, 36, 36);
+  }
+  
+  .character-description {
+    font-size: 16px;
+    margin: 15px;
+  }
+  
+  .main-quote {
+    font-size: 18px;
+  }
+  
