@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BtnComponent from '../components/BtnComponent';
-import CharacterImage from '../Half.png'; // 캐릭터 이미지 경로에 맞게 수정
-import '../styles/ResultPage.css'; // 새로운 CSS 파일 추가
+import CharacterImage from '../Half.png'; //예시이미지
+import '../styles/ResultPage.css';
 
 const ResultPage = () => {
   // 가상 데이터 예시 (스프링부트에서 데이터를 받아와서 사용)
@@ -17,7 +17,7 @@ const ResultPage = () => {
     const currentURL = window.location.href;
     navigator.clipboard.writeText(currentURL)
       .then(() => {
-        alert('링크가 클립보드에 복사되었습니다.');
+        alert('테스트 결과 링크가 복사되었습니다.');
       })
       .catch((error) => {
         console.error('링크 복사 중 오류:', error);
