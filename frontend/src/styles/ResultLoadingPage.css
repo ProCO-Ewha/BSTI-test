@@ -27,6 +27,7 @@
   width: 65px;
   z-index: -1; /* 등불 이미지를 컨텐츠 뒤에 둠 */
   animation: shake 4s infinite; /* Adjust duration for a slower shake */
+  filter: drop-shadow(10px 10px 11px #a0d7ec);
 }
 
 .loading-text {
