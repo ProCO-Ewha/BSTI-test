@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import StartLoadingImage from '../startroading.png';
+import StartLoadingImage from '../startloading.png';
 import '../styles/StartRoading.css';
 
 const StartRoading = () => {

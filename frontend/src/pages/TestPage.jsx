@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import QuestionData from '../QuestionData.json';
 import AnswerBtn from '../components/AnswerBtn';
 import ResultPage from './ResultPage';
+import ResultLoadingPage from './ResultLoadingPage';  // 추가된 부분
 import '../styles/TestPage.css';
 
 const TestPage = () => {
@@ -19,6 +20,7 @@ const TestPage = () => {
     n: 0,
     f: 0,
   });
+  const [loading, setLoading] = useState(false);  // 추가된 부분
   const navigate = useNavigate();
 
   const handleAnswerClick = (answerType) => {
@@ -30,9 +32,17 @@ const TestPage = () => {
     if (currentQuestion < QuestionData.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      navigate('/result');
+      setLoading(true);  // 로딩 상태를 true로 변경
+      setTimeout(() => {
+        setLoading(false);
+        navigate('/result');
+      }, 2000);
     }
   };
+
+  if (loading) {
+    return <ResultLoadingPage />;
+  }
 
   if (currentQuestion >= QuestionData.length) {
     return <ResultPage answerScores={answerScores} />;

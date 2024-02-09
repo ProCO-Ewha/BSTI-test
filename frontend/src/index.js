@@ -1,9 +1,12 @@
+// index.js
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import TestPage from './pages/TestPage';
 import ResultPage from './pages/ResultPage';
+import ResultLoadingPage from './pages/ResultLoadingPage'; // Import ResultLoadingPage
 import './styles/global.css';
 import StartRoading from './pages/StartRoading';
 
@@ -12,8 +15,10 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/startloading" element={<StartRoading />} /> 
-        <Route path="/test" element={<TestPage />} />
+        <Route path="/startloading" element={<StartRoading />} />
+        <Route path="/test" element={<TestPage />}>
+          <Route path="loading" element={<ResultLoadingPage />} /> {/* Add loading route */}
+        </Route>
         <Route path="/result" element={<ResultPage />} />
       </Routes>
     </Router>

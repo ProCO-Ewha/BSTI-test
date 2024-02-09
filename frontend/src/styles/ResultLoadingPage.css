@@ -1,0 +1,42 @@
+/* styles/ResultLoadingPage.css */
+
+.result-loading-page-container {
+  position: relative;
+  width: 440px;
+  height: 100vh; /* 100% 뷰포트 높이 */
+  overflow: hidden; /* 내용이 넘치는 경우 가림 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* Text color */
+}
+
+.loading-background {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: -1; /* 배경 이미지를 컨텐츠 뒤에 둠 */
+  filter: blur(1px);
+}
+
+.bonfire-image {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  z-index: -1; /* 등불 이미지를 컨텐츠 뒤에 둠 */
+  animation: shake 4s infinite; /* Adjust duration for a slower shake */
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 18px;
+  text-shadow: 5px 5px 6px rgb(36, 36, 36);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  5%, 25%, 45%, 65%, 85% { transform: translateY(-3px) rotate(-1deg); }
+  15%, 35%, 55%, 75% { transform: translateY(3px) rotate(1deg); }
+}
