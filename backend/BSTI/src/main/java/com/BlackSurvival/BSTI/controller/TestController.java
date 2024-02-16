@@ -3,6 +3,7 @@ package com.BlackSurvival.BSTI.controller;
 import com.BlackSurvival.BSTI.entity.Test;
 import com.BlackSurvival.BSTI.form.TestForm;
 import com.BlackSurvival.BSTI.service.TestService;
+import com.amazonaws.services.s3.AmazonS3;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.net.URL;
 import java.util.Optional;
 
 @Controller
@@ -19,6 +21,8 @@ import java.util.Optional;
 public class TestController {
 
     private final TestService service;
+    private final AmazonS3 s3;
+
     @GetMapping("show/{id}")
     //@ResponseBody
     public String getTest(@PathVariable Integer id, Model model){
@@ -26,6 +30,9 @@ public class TestController {
 
         if(testOpt.isPresent()){
             model.addAttribute("data", testOpt.get());
+            URL url = s3.getUrl("bsti-imageserver", "1");
+            String urlTest = ""+url;
+            model.addAttribute("img1", urlTest);
         }
         else{
             model.addAttribute("data", new Test(id, "Why you are here?"));

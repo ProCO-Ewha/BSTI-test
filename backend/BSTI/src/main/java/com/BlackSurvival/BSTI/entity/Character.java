@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.net.URL;
+
 @Data
 @AllArgsConstructor
 public class Character {
@@ -12,5 +14,7 @@ public class Character {
     @Id
     private String id;
     private String name;
-    private String comment;
+    private URL image;
+    private String description;
+    private String mainQuote;
 }

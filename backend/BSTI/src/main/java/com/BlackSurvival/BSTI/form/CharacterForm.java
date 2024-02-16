@@ -6,15 +6,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.net.URL;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class CharacterForm {
 
     @Id
-    private String id;
-    @NotEmpty
     private String name;
     @NotEmpty
-    private String comment;
+    private URL image;
+    @NotEmpty
+    private String description;
+    @NotEmpty
+    private String mainQuote;
+
 }
