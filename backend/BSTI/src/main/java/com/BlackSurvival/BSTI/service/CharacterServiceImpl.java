@@ -17,6 +17,7 @@ public class CharacterServiceImpl implements CharacterService {
 
     private final CharacterRepository repository;
 
+    @Override
     public Optional<Character> selectById(String id){
         return repository.findById(id);
     }
