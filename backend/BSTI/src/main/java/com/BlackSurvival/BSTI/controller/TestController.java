@@ -30,9 +30,9 @@ public class TestController {
 
         if(testOpt.isPresent()){
             model.addAttribute("data", testOpt.get());
-            URL url = s3.getUrl("bsti-imageserver", "1");
-            String urlTest = ""+url;
-            model.addAttribute("img1", urlTest);
+            //URL url = s3.getUrl("bsti-imageserver", "1");
+            //String urlTest = ""+url;
+            //model.addAttribute("img1", urlTest);
         }
         else{
             model.addAttribute("data", new Test(id, "Why you are here?"));
