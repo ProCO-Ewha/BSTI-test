@@ -22,7 +22,7 @@ public class TestController {
 
 
     private final TestService service;
-    private final AmazonS3 s3;
+    //private final AmazonS3 s3;
 
     @GetMapping("show/{id}")
     //@ResponseBody
