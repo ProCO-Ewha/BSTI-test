@@ -1,0 +1,40 @@
+/* styles/MainPage.css */
+
+.main-page-container {
+  position: relative;
+  width: 440px;
+  height: 100vh; /* 100% 뷰포트 높이 */
+  overflow: hidden; /* 내용이 넘치는 경우 가림 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* 배경 이미지를 컨텐츠 뒤에 둠 */
+}
+
+.content {
+  z-index: 1;
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
+
+.amI {
+  margin-top: 130px;
+  text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+.title-image {
+  margin-top: 20px;
+}
+
+.btn-container {
+  margin-top: 80px;
+}
