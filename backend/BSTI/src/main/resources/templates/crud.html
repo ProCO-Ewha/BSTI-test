@@ -10,7 +10,7 @@
 <p th:if="${complete}" th:text="${complete}" style="color:blue"></p>
 <!--/* ▼▼▼ Form ▼▼▼ */-->
 <form method="POST"
-     th:action="/crud/insert"
+     th:action="@{/crud/insert}"
      th:object="${character}">
    <label>BSTI: </label><br>
    <input type="text" th:field="*{id}" />
