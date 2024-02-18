@@ -9,7 +9,7 @@ import org.springframework.data.annotation.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CharacterForm {
+public class BSCharacterForm {
 
     @Id
     private String name;
