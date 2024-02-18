@@ -12,9 +12,11 @@ import org.springframework.data.annotation.Id;
 public class CharacterForm {
 
     @Id
-    private String id;
-    @NotEmpty
     private String name;
     @NotEmpty
-    private String comment;
+    private String image;
+    @NotEmpty
+    private String description;
+    @NotEmpty
+    private String mainQuote;
 }

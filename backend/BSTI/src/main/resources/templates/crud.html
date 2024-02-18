@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BSTI Data Crud</title>
+</head>
+<body>
+<h3>데이터 삽입</h3>
+<!--/* 등록/변경 완료 메시지 */-->
+<p th:if="${complete}" th:text="${complete}" style="color:blue"></p>
+<!--/* ▼▼▼ Form ▼▼▼ */-->
+<form method="POST"
+     th:action="/quiz/insert"
+     th:object="${com.BlackSurvival.BSTI.entity.Character}">
+   <label>BSTI: </label><br>
+   <input type="text" th:field="*{id}" />
+   <br>
+   <label>name: </label><br>
+   <input type="text" th:field="*{name}" />
+   <br>
+   <label>Description: </label><br>
+   <textarea rows="5" cols="50" th:field="*{description}"></textarea>
+   <br>
+   <label>mainQuote: </label><br>
+   <textarea rows="5" cols="50" th:field="*{mainQuote}"></textarea>
+   <br>
+   <input type="submit" value="송신">
+</form>
+</body>
+</html>

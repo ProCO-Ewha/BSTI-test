@@ -12,5 +12,6 @@ public class Character {
     @Id
     private String id;
     private String name;
-    private String comment;
+    private String description;
+    private String mainQuote;
 }
