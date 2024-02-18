@@ -11,7 +11,7 @@
 <!--/* ▼▼▼ Form ▼▼▼ */-->
 <form method="POST"
      th:action="/quiz/insert"
-     th:object="${com.BlackSurvival.BSTI.entity.Character}">
+     th:object="${character}">
    <label>BSTI: </label><br>
    <input type="text" th:field="*{id}" />
    <br>

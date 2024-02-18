@@ -23,7 +23,7 @@ public class DataController {
 
     @GetMapping("/show")
     public String show(Character character, Model model){
-        model.addAttribute("Character", character);
+        model.addAttribute("character", character);
         return "crud";
     }
 
