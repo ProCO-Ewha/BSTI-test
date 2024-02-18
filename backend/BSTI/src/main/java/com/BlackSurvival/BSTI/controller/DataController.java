@@ -22,7 +22,8 @@ public class DataController {
     CharacterService service;
 
     @GetMapping("/show")
-    public String show(Model model){
+    public String show(Character character, Model model){
+        model.addAttribute("Character", character);
         return "crud";
     }
 
