@@ -21,8 +21,8 @@ public class DataController {
     @Autowired
     CharacterService service;
 
-    @GetMapping()
-    public String show(){
+    @GetMapping("/show")
+    public String show(Model model){
         return "crud";
     }
 
