@@ -1,6 +1,6 @@
 package com.BlackSurvival.BSTI.controller;
 
-import com.BlackSurvival.BSTI.entity.BSCharacter;
+import com.BlackSurvival.BSTI.entity.BS_Character;
 import com.BlackSurvival.BSTI.form.BSCharacterForm;
 import com.BlackSurvival.BSTI.form.ResultForm;
 import com.BlackSurvival.BSTI.service.CharacterService;
@@ -30,7 +30,7 @@ public class ResultController {
         bsti += (result.getCountN() > result.getCountF()) ? "N" : "F";
 
         //결과(CharacterForm) 생성
-        Optional<BSCharacter> characterOpt = service.selectById(bsti);
+        Optional<BS_Character> characterOpt = service.selectById(bsti);
         BSCharacterForm form = new BSCharacterForm();
         if(characterOpt.isPresent())
             form = makeCharacterForm(characterOpt.get());
@@ -40,7 +40,7 @@ public class ResultController {
     }
 
 
-    private BSCharacterForm makeCharacterForm(BSCharacter entity){
+    private BSCharacterForm makeCharacterForm(BS_Character entity){
         BSCharacterForm form = new BSCharacterForm();
 
         form.setName(entity.getName());

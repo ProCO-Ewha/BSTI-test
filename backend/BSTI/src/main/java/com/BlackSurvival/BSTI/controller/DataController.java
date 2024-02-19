@@ -1,6 +1,6 @@
 package com.BlackSurvival.BSTI.controller;
 
-import com.BlackSurvival.BSTI.entity.BSCharacter;
+import com.BlackSurvival.BSTI.entity.BS_Character;
 import com.BlackSurvival.BSTI.service.CharacterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +23,12 @@ public class DataController {
 
     @GetMapping("/show")
     public String show(Model model){
-        model.addAttribute("character", new BSCharacter());
+        model.addAttribute("character", new BS_Character());
         return "crud";
     }
 
     @PostMapping("/insert")
-    public void insert(@Validated BSCharacter character, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
+    public void insert(@Validated BS_Character character, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
 
         if(!bindingResult.hasErrors()){
             service.insertCharacter(character);
