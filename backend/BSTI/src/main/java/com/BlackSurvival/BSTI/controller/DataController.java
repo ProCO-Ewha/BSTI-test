@@ -28,11 +28,13 @@ public class DataController {
     }
 
     @PostMapping("/insert")
-    public void insert(@Validated BS_Character character, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
+    public String insert(@Validated BS_Character character, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes){
 
         if(!bindingResult.hasErrors()){
             service.insertCharacter(character);
             redirectAttributes.addFlashAttribute("complete", "등록이 완료되었습니다. ");
         }
+
+        return "redirect:/crud/show";
     }
 }
