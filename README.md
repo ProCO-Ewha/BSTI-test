@@ -9,3 +9,6 @@
 | front | back |
 |---|---|
 | 한사랑 | 강승연 |
+
+## 현재 최종 보고
+[중중간발표 PPT](https://docs.google.com/presentation/d/1krOS0x8B541HuvMMCdtNhVaXYY_DY-0_/edit?usp=sharing&ouid=106009116602613498747&rtpof=true&sd=true)
