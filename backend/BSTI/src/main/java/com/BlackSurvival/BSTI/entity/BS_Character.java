@@ -15,6 +15,7 @@ public class BS_Character {
     @Id
     private String id;
     private String name;
+    private String eng_name;
     private String description;
-    private String mainQuote;
+    private String main_quote;
 }

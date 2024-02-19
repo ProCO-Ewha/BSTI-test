@@ -1,7 +1,7 @@
 package com.BlackSurvival.BSTI.controller;
 
 import com.BlackSurvival.BSTI.entity.BS_Character;
-import com.BlackSurvival.BSTI.form.BSCharacterForm;
+import com.BlackSurvival.BSTI.form.BS_CharacterForm;
 import com.BlackSurvival.BSTI.form.ResultForm;
 import com.BlackSurvival.BSTI.service.CharacterService;
 import lombok.RequiredArgsConstructor;
@@ -12,14 +12,15 @@ import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/result")
 public class ResultController {
 
     private final CharacterService service;
 
     //트랜젝션 적용할 것
     @ResponseBody
-    @PostMapping("/result")
-    public BSCharacterForm getResult(@RequestBody ResultForm result){
+    @PostMapping("/character")
+    public BS_CharacterForm getResult(@RequestBody ResultForm result){
         //로직처리
 
         String bsti = "";
@@ -31,7 +32,7 @@ public class ResultController {
 
         //결과(CharacterForm) 생성
         Optional<BS_Character> characterOpt = service.selectById(bsti);
-        BSCharacterForm form = new BSCharacterForm();
+        BS_CharacterForm form = new BS_CharacterForm();
         if(characterOpt.isPresent())
             form = makeCharacterForm(characterOpt.get());
 
@@ -40,13 +41,13 @@ public class ResultController {
     }
 
 
-    private BSCharacterForm makeCharacterForm(BS_Character entity){
-        BSCharacterForm form = new BSCharacterForm();
+    private BS_CharacterForm makeCharacterForm(BS_Character entity){
+        BS_CharacterForm form = new BS_CharacterForm();
 
         form.setName(entity.getName());
-        form.setImage(""); //추후 S3 연결 후 URL 채워넣기
+        form.setImage_url(""); //추후 S3 연결 후 URL 채워넣기
         form.setDescription(entity.getDescription());
-        form.setMainQuote(entity.getMainQuote());
+        form.setMain_quote(entity.getMain_quote());
 
         return form;
     }

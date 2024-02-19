@@ -18,11 +18,14 @@
    <label>name: </label><br>
    <input type="text" th:field="*{name}" />
    <br>
+   <label>image name: </label><br>
+   <input type="text" th:field="*{image_name}" />
+   <br>
    <label>Description: </label><br>
    <textarea rows="5" cols="50" th:field="*{description}"></textarea>
    <br>
-   <label>mainQuote: </label><br>
-   <textarea rows="5" cols="50" th:field="*{mainQuote}"></textarea>
+   <label>main quote: </label><br>
+   <textarea rows="5" cols="50" th:field="*{main_quote}"></textarea>
    <br>
    <input type="submit" value="송신">
 </form>
