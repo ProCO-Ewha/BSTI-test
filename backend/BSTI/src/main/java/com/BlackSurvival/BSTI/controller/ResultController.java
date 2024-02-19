@@ -12,14 +12,14 @@ import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/result")
+@RequestMapping("/bsti")
 public class ResultController {
 
     private final CharacterService service;
 
     //트랜젝션 적용할 것
     @ResponseBody
-    @PostMapping("/character")
+    @PostMapping("/result")
     public BS_CharacterForm getResult(@RequestBody ResultForm result){
         //로직처리
 
