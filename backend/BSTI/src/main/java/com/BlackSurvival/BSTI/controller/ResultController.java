@@ -4,10 +4,12 @@ import com.BlackSurvival.BSTI.entity.BS_Character;
 import com.BlackSurvival.BSTI.form.BS_CharacterForm;
 import com.BlackSurvival.BSTI.form.ResultForm;
 import com.BlackSurvival.BSTI.service.CharacterService;
+import com.amazonaws.services.s3.AmazonS3;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URL;
 import java.util.Optional;
 
 @Controller
@@ -16,6 +18,7 @@ import java.util.Optional;
 public class ResultController {
 
     private final CharacterService service;
+    private final AmazonS3 s3Client;
 
     //트랜젝션 적용할 것
     @ResponseBody
@@ -44,8 +47,10 @@ public class ResultController {
     private BS_CharacterForm makeCharacterForm(BS_Character entity){
         BS_CharacterForm form = new BS_CharacterForm();
 
+        URL url = s3Client.getUrl("bsti-imageserver", entity.getEng_name());
+
         form.setName(entity.getName());
-        form.setImage_url(""); //추후 S3 연결 후 URL 채워넣기
+        form.setImage_url(""+url); //추후 S3 연결 후 URL 채워넣기
         form.setDescription(entity.getDescription());
         form.setMain_quote(entity.getMain_quote());
 
