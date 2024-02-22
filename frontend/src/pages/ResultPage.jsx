@@ -5,13 +5,23 @@ import CharacterImage from '../Half.png'; //예시이미지
 import '../styles/ResultPage.css';
 
 const ResultPage = () => {
-  // 가상 데이터 예시 (스프링부트에서 데이터를 받아와서 사용)
-  const characterData = {
-    name: '재키',
+  const [characterData, setCharacterData] = useState({
+    name: '',
     image: CharacterImage,
-    description: '캐릭터 유형에 대한 설명이 여기에 들어갑니다. 매우 긴 설명 예시입니다. 스크롤이 가능합니다. 캐릭터 유형에 대한 설명이 여기에 들어갑니다. 매우 긴 설명 예시입니다. 스크롤이 가능합니다.  캐릭터 유형에 대한 설명이 여기에 들어갑니다. 매우 긴 설명 예시입니다. 스크롤이 가능합니다. 캐릭터 유형에 대한 설명이 여기에 들어갑니다. 매우 긴 설명 예시입니다. 스크롤이 가능합니다.캐릭터 유형에 대한 설명이 여기에 들어갑니다. 매우 긴 설명 예시입니다. 스크롤이 가능합니다.캐릭터 유형에 대한 설명이 여기에 들어갑니다. 매우 긴 설명 예시입니다. 스크롤이 가능합니다.',
-    mainQuote: '캐릭터의 메인 대사가 여기에 들어갑니다.',
-  };
+    description: '',
+    mainQuote: '',
+  });
+
+  useEffect(() => {
+    axios.get('서버 엔드포인트로 수정 부탁!')
+      .then((response) => {
+        console.log('성공적으로 데이터를 받아왔습니다.', response.data);
+        setCharacterData(response.data);  // 받은 데이터로 state 업데이트
+      })
+      .catch((error) => {
+        console.error('데이터를 받아오는 중 에러가 발생했습니다.', error);
+      });
+  }, []);  // 컴포넌트가 마운트될 때 한 번만 호출
 
   const handleCopyLink = () => {
     const currentURL = window.location.href;

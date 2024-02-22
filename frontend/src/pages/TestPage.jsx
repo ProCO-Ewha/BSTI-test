@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import QuestionData from '../QuestionData.json';
 import AnswerBtn from '../components/AnswerBtn';
 import ResultPage from './ResultPage';
-import ResultLoadingPage from './ResultLoadingPage';  // 추가된 부분
+import ResultLoadingPage from './ResultLoadingPage';
 import '../styles/TestPage.css';
 
 const TestPage = () => {
@@ -20,7 +20,7 @@ const TestPage = () => {
     n: 0,
     f: 0,
   });
-  const [loading, setLoading] = useState(false);  // 추가된 부분
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleAnswerClick = (answerType) => {
@@ -38,7 +38,31 @@ const TestPage = () => {
         navigate('/result');
       }, 2000);
     }
-  };
+
+axios.post('aws 서버 엔드포인트 추가부탁!', {
+        countA: answerScores.a,
+        countD: answerScores.d,
+        countE: answerScores.e,
+        countL: answerScores.l,
+        countT: answerScores.t,
+        countS: answerScores.s,
+        countN: answerScores.n,
+        countF: answerScores.f,
+      })
+      .then(() => {
+        // 로딩을 2초동안 유지한 후에 결과 페이지로 이동
+        setTimeout(() => {
+          setLoading(false);
+          navigate('/result');
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error('결과를 서버에 전송하는 중 오류 발생:', error);
+        // 오류 처리
+      });
+    }
+  
+  
 
   if (loading) {
     return <ResultLoadingPage />;
