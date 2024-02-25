@@ -7,6 +7,7 @@ import AnswerBtn from '../components/AnswerBtn';
 import ResultPage from './ResultPage';
 import ResultLoadingPage from './ResultLoadingPage';
 import '../styles/TestPage.css';
+import axios from 'axios';
 
 const TestPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -39,7 +40,7 @@ const TestPage = () => {
       }, 2000);
     }
 
-axios.post('aws 서버 엔드포인트 추가부탁!', {
+axios.post('3.35.138.123:8080/bsti/result', {
         countA: answerScores.a,
         countD: answerScores.d,
         countE: answerScores.e,

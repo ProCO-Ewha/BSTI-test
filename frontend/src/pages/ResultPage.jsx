@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BtnComponent from '../components/BtnComponent';
 import CharacterImage from '../Half.png'; //예시이미지
 import '../styles/ResultPage.css';
+import axios from 'axios';
 
 const ResultPage = () => {
   const [characterData, setCharacterData] = useState({
