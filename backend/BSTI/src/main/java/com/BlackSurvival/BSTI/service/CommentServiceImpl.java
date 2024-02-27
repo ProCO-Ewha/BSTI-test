@@ -13,7 +13,7 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 public class CommentServiceImpl implements CommentService{
-    CommentRepository repository;
+    private final CommentRepository repository;
     @Override
     public void post_comment(Comment comment){
         repository.save(comment);

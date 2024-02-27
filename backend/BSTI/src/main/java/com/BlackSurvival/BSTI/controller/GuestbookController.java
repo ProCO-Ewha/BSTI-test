@@ -19,6 +19,7 @@ import java.util.List;
 @RequestMapping("/guestbook")
 public class GuestbookController {
 
+
     private final CommentService service;
 
     @PostMapping("/comment")
