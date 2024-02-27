@@ -20,7 +20,6 @@ public class ResultController {
     private final CharacterService service;
     private final AmazonS3 s3Client;
 
-    //트랜젝션 적용할 것
     @ResponseBody
     @PostMapping("/result")
     public BS_CharacterForm getResult(@RequestBody ResultForm result){
@@ -50,7 +49,7 @@ public class ResultController {
         URL url = s3Client.getUrl("bsti-imageserver", entity.getEng_name());
 
         form.setName(entity.getName());
-        form.setImage_url(""+url); //추후 S3 연결 후 URL 채워넣기
+        form.setImage_url(""+url);
         form.setDescription(entity.getDescription());
         form.setMain_quote(entity.getMain_quote());
 
