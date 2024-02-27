@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Comment {
 
     @Id
-    private int id;writetimede
+    private int id;
     private String writer;
     private String time;
     private String detail;
