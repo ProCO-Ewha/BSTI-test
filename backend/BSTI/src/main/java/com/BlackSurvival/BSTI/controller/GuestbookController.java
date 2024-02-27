@@ -22,6 +22,7 @@ public class GuestbookController {
 
     private final CommentService service;
 
+    @ResponseBody
     @PostMapping("/comment")
     public void post_comment(@RequestBody CommentForm commentForm){
         service.post_comment(makeComment(commentForm));
