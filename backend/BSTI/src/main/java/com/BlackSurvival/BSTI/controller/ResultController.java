@@ -25,6 +25,8 @@ public class ResultController {
     public BS_CharacterForm getResult(@RequestBody ResultForm result){
         //로직처리
 
+        System.out.println(result.getCountA());
+
         String bsti = "";
 
         bsti += (result.getCountA() > result.getCountD()) ? "A" : "D";
