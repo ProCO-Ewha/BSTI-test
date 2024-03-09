@@ -1,5 +1,3 @@
-// TestPage.jsx
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import QuestionData from '../QuestionData.json';
@@ -33,49 +31,25 @@ const TestPage = () => {
     if (currentQuestion < QuestionData.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      setLoading(true);  // 로딩 상태를 true로 변경
+      setLoading(true);
       setTimeout(() => {
         setLoading(false);
-        navigate('/result');
+        navigate('/result', { state: answerScores });
       }, 2000);
     }
-
-axios.post('http://3.35.138.123:8080/', {
-        countA: answerScores.a,
-        countD: answerScores.d,
-        countE: answerScores.e,
-        countL: answerScores.l,
-        countT: answerScores.t,
-        countS: answerScores.s,
-        countN: answerScores.n,
-        countF: answerScores.f,
-      })
-      .then(() => {
-        // 로딩을 2초동안 유지한 후에 결과 페이지로 이동
-        setTimeout(() => {
-          setLoading(false);
-          navigate('/result');
-        }, 2000);
-      })
-      .catch((error) => {
-        console.error('결과를 서버에 전송하는 중 오류 발생:', error);
-        // 오류 처리
-      });
-    }
-  
-  
+  };
 
   if (loading) {
     return <ResultLoadingPage />;
   }
 
   if (currentQuestion >= QuestionData.length) {
-    return <ResultPage answerScores={answerScores} />;
+    return <ResultPage />;
   }
 
   const currentQuestionData = QuestionData[currentQuestion];
   const backgroundImage = currentQuestionData.backgroundImage;
-  
+
   return (
     <div className="test-page-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <p className="question-text">

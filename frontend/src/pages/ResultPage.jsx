@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import BtnComponent from '../components/BtnComponent';
-import axios from 'axios'; // axios 추가
+import axios from 'axios';
 import '../styles/ResultPage.css';
 
 const ResultPage = () => {
@@ -12,16 +12,18 @@ const ResultPage = () => {
     mainQuote: '',
   });
 
+  const { state } = useLocation();
+
   useEffect(() => {
-    axios.get('http://3.35.138.123:8080/') // AWS 서버의 엔드포인트로 요청을 보냄
+    axios.post('http://3.35.138.123:8080/', state)
       .then((response) => {
         console.log('성공적으로 데이터를 받아왔습니다.', response.data);
-        setCharacterData(response.data);  // 받은 데이터로 state 업데이트
+        setCharacterData(response.data);
       })
       .catch((error) => {
         console.error('데이터를 받아오는 중 에러가 발생했습니다.', error);
       });
-  }, []);  // 컴포넌트가 마운트될 때 한 번만 호출
+  }, [state]);
 
   const handleCopyLink = () => {
     const currentURL = window.location.href;
