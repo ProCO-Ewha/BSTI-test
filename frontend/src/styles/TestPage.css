@@ -1,0 +1,64 @@
+/* styles/TestPage.css */
+
+.test-page-container {
+  position: relative;
+  width: 440px;
+  height: 100vh; /* 100% 뷰포트 높이 */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* 검은색 레이어의 투명도 조절 */
+  pointer-events: none; /* pointer 이벤트 비활성화 */
+  z-index: 0; /* Lower z-index to send it to the back */
+}
+
+.question-text {
+  font-size: 24px;
+  color: #dedede;
+  font-weight: bold;
+  width: 372px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* 텍스트를 오버레이 위에 위치시킴 */
+  line-height: 1.5;
+}
+
+.answerline {
+  margin-top: 20px;
+}
+
+.explain-image-container {
+  width: 100%;
+  max-width: 200px; /* Maximum width for the explanation image */
+  margin-top: 20px; /* Adjusted margin-top for better spacing */
+  position: relative; /* Added position:relative to enable z-index */
+  z-index: 2; /* Higher z-index to place it above the overlay */
+  animation: floatAnimation 0.9s infinite alternate; /* Floating animation */
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(15px); /* Adjust the value for the desired floating range */
+  }
+}
+
+.explain-image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
