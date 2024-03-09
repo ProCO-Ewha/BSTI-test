@@ -9,12 +9,14 @@ import org.springframework.data.annotation.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CharacterForm {
+public class BS_CharacterForm {
 
     @Id
-    private String id;
-    @NotEmpty
     private String name;
     @NotEmpty
-    private String comment;
+    private String image_url;
+    @NotEmpty
+    private String description;
+    @NotEmpty
+    private String main_quote;
 }

@@ -1,4 +1,4 @@
-package com.BlackSurvival.BSTI.entity.object;
+package com.BlackSurvival.BSTI.form;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Result {
+public class ResultForm {
     int countA;
     int countD;
     int countE;

@@ -1,16 +1,21 @@
 package com.BlackSurvival.BSTI.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 @Data
+@Entity
+@NoArgsConstructor
 @AllArgsConstructor
-public class Character {
+public class BS_Character {
 
     @Id
     private String id;
     private String name;
-    private String comment;
+    private String eng_name;
+    private String description;
+    private String main_quote;
 }

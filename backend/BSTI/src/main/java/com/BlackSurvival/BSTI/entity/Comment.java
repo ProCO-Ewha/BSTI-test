@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Test {
+public class Comment {
 
     @Id
-    private Integer id;
-    private String question;
+    private int id;
+    private String writer;
+    private String time;
+    private String detail;
 }
