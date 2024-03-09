@@ -15,6 +15,7 @@ import java.net.URL;
 import java.util.List;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:3000")
 @RequiredArgsConstructor
 @RequestMapping("/guestbook")
 public class GuestbookController {

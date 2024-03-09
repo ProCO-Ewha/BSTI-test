@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.Optional;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:3000")
 @RequiredArgsConstructor
 @RequestMapping("/bsti")
 public class ResultController {
