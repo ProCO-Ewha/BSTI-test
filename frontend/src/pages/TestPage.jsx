@@ -39,7 +39,7 @@ const TestPage = () => {
       }, 2000);
     }
 
-axios.post('aws 서버 엔드포인트 추가부탁!', {
+axios.post('http://3.35.138.123:8080/', {
         countA: answerScores.a,
         countD: answerScores.d,
         countE: answerScores.e,
