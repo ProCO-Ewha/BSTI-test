@@ -7,6 +7,7 @@ import AnswerBtn from '../components/AnswerBtn';
 import ResultPage from './ResultPage';
 import ResultLoadingPage from './ResultLoadingPage';
 import '../styles/TestPage.css';
+import axios from 'axios';
 
 const TestPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
