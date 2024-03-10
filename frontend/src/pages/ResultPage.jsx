@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BtnComponent from '../components/BtnComponent';
 import axios from 'axios';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'; // GitHub-flavored Markdown 플러그인
+import ReactMarkdown from 'react-markdown'; // react-markdown 라이브러리 추가
 import '../styles/ResultPage.css';
 
 const ResultPage = () => {
@@ -14,13 +13,16 @@ const ResultPage = () => {
     mainQuote: '',
   });
 
-  const { state } = useLocation();
-
   useEffect(() => {
     axios.get('http://3.35.138.123:8080/bsti/returnresult')
       .then((response) => {
         console.log('성공적으로 데이터를 받아왔습니다.', response.data);
-        setCharacterData(response.data);
+        setCharacterData({
+          name: response.data.name,
+          image_url: response.data.image_url,
+          description: response.data.description,
+          mainQuote: response.data.mainQuote,
+        });
       })
       .catch((error) => {
         console.error('데이터를 받아오는 중 에러가 발생했습니다.', error);
@@ -49,9 +51,7 @@ const ResultPage = () => {
           <img src={characterData.image_url} alt={characterData.name} className="character-image" />
           <div className="character-details">
             <p className="main-quote" style={{ color: '#D9EFF6' }}>{characterData.mainQuote}</p>
-            <ReactMarkdown className="character-description" remarkPlugins={[remarkGfm]}>
-              {characterData.description}
-            </ReactMarkdown>
+            <ReactMarkdown className="character-description">{characterData.description}</ReactMarkdown>
           </div>
 
           <div className="btn-group">
