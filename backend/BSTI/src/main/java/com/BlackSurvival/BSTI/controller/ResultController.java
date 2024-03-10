@@ -54,8 +54,8 @@ public class ResultController {
     private BS_CharacterForm makeCharacterForm(BS_Character entity){
         BS_CharacterForm form = new BS_CharacterForm();
 
-        URL url = s3Client.getUrl("bsti-imageserver", entity.getEng_name());
-
+        URL url = s3Client.getUrl("bsti-imageserver", "CharacterHalf/"+entity.getEng_name());
+        String temp = ""+url;
         form.setName(entity.getName());
         form.setImage_url(""+url);
         form.setDescription(entity.getDescription());
