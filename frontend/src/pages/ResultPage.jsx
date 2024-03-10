@@ -10,7 +10,7 @@ const ResultPage = () => {
     name: '',
     image_url: '',
     description: '',
-    mainQuote: '',
+    main_quote: '',
   });
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const ResultPage = () => {
           name: response.data.name,
           image_url: response.data.image_url,
           description: response.data.description,
-          mainQuote: response.data.mainQuote,
+          main_quote: response.data.main_quote,
         });
       })
       .catch((error) => {
@@ -50,7 +50,7 @@ const ResultPage = () => {
           <h2 className="character-name">{characterData.name}</h2>
           <img src={characterData.image_url} alt={characterData.name} className="character-image" />
           <div className="character-details">
-            <p className="main-quote" style={{ color: '#D9EFF6' }}>{characterData.mainQuote}</p>
+            <p className="main-quote" style={{ color: '#D9EFF6' }}>{characterData.main_quote}</p>
             <ReactMarkdown className="character-description">{characterData.description}</ReactMarkdown>
           </div>
 
