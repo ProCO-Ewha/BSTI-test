@@ -20,10 +20,10 @@ public class ResultController {
 
     private final CharacterService service;
     private final AmazonS3 s3Client;
+    private BS_CharacterForm currentResult;
 
-    @ResponseBody
     @PostMapping("/result")
-    public BS_CharacterForm getResult(@RequestBody ResultForm result){
+    public void getResult(@RequestBody ResultForm result){
         //로직처리
 
         System.out.println(result.getCountA());
@@ -42,15 +42,20 @@ public class ResultController {
             form = makeCharacterForm(characterOpt.get());
 
         //결과(Character) 전송
-        return form;
+        currentResult = form;
     }
 
+    @ResponseBody
+    @GetMapping("/returnresult")
+    public BS_CharacterForm returnResult() {
+        return currentResult;
+    }
 
     private BS_CharacterForm makeCharacterForm(BS_Character entity){
         BS_CharacterForm form = new BS_CharacterForm();
 
-        URL url = s3Client.getUrl("bsti-imageserver", entity.getEng_name());
-
+        URL url = s3Client.getUrl("bsti-image", "CharacterHalf/"+entity.getEng_name()+".png");
+        String temp = ""+url;
         form.setName(entity.getName());
         form.setImage_url(""+url);
         form.setDescription(entity.getDescription());

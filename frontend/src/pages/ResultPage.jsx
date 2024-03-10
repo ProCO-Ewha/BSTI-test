@@ -15,8 +15,15 @@ const ResultPage = () => {
   const { state } = useLocation();
 
   useEffect(() => {
-    setCharacterData(state);
-  }, [state]);
+    axios.get('http://3.35.138.123:8080/bsti/returnresult') // AWS 서버의 엔드포인트로 요청을 보냄
+      .then((response) => {
+        console.log('성공적으로 데이터를 받아왔습니다.', response.data);
+        setCharacterData(response.data);  // 받은 데이터로 state 업데이트
+      })
+      .catch((error) => {
+        console.error('데이터를 받아오는 중 에러가 발생했습니다.', error);
+      });
+  }, []);  // 컴포넌트가 마운트될 때 한 번만 호출
 
   const handleCopyLink = () => {
     const currentURL = window.location.href;
