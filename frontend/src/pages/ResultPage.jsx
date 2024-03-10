@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import BtnComponent from '../components/BtnComponent';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import remarkGfm from 'remark-gfm'; // GitHub-flavored Markdown 플러그인
 import '../styles/ResultPage.css';
 
 const ResultPage = () => {
@@ -49,7 +49,7 @@ const ResultPage = () => {
           <img src={characterData.image_url} alt={characterData.name} className="character-image" />
           <div className="character-details">
             <p className="main-quote" style={{ color: '#D9EFF6' }}>{characterData.mainQuote}</p>
-            <ReactMarkdown className="character-description" plugins={[remarkGfm]}>
+            <ReactMarkdown className="character-description" remarkPlugins={[remarkGfm]}>
               {characterData.description}
             </ReactMarkdown>
           </div>
