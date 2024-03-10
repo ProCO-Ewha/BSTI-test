@@ -40,7 +40,7 @@ const TestPage = () => {
       }, 2000);
     }
 
-axios.post('http://3.35.138.123:8080/', {
+axios.post('http://3.35.138.123:8080/bsti/result', {
         countA: answerScores.a,
         countD: answerScores.d,
         countE: answerScores.e,
