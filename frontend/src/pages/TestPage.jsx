@@ -32,10 +32,28 @@ const TestPage = () => {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-        navigate('/result', { state: answerScores });
-      }, 2000);
+
+      axios.post('http://3.35.138.123:8080/result', {
+        countA: answerScores.a,
+        countD: answerScores.d,
+        countE: answerScores.e,
+        countL: answerScores.l,
+        countT: answerScores.t,
+        countS: answerScores.s,
+        countN: answerScores.n,
+        countF: answerScores.f,
+      })
+      .then((response) => {
+        // 로딩을 2초동안 유지한 후에 결과 페이지로 이동
+        setTimeout(() => {
+          setLoading(false);
+          navigate('/result', { state: response.data });
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error('결과를 서버에 전송하는 중 오류 발생:', error);
+        // 오류 처리
+      });
     }
   };
 

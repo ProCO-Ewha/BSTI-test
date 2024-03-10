@@ -15,14 +15,7 @@ const ResultPage = () => {
   const { state } = useLocation();
 
   useEffect(() => {
-    axios.post('http://3.35.138.123:8080/', state)
-      .then((response) => {
-        console.log('성공적으로 데이터를 받아왔습니다.', response.data);
-        setCharacterData(response.data);
-      })
-      .catch((error) => {
-        console.error('데이터를 받아오는 중 에러가 발생했습니다.', error);
-      });
+    setCharacterData(state);
   }, [state]);
 
   const handleCopyLink = () => {
