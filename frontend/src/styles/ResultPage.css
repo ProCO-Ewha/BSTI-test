@@ -43,6 +43,7 @@
     border: 1px solid #F2F1DA;
     margin-bottom: 30px;
     border-radius: 4px;
+    padding: 15px;
   }
   
   .character-name {
@@ -54,10 +55,23 @@
   }
   
   .character-description {
+    margin: 15px 0;
     font-size: 16px;
-    margin: 15px;
+
   }
   
   .main-quote {
     font-size: 18px;
+  }
+
+
+  ul {
+    text-align: left;
+    margin: 0;
+    padding-left: 0px;
+    list-style-position: inside;
+  }
+  
+  .character-description li {
+    margin-bottom: 15px;
   }
