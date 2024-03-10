@@ -46,9 +46,10 @@ const ResultPage = () => {
           <h2 className="character-name">{characterData.name}</h2>
           <img src={characterData.image_url} alt={characterData.name} className="character-image" />
           <div className="character-details">
-            <p className="main-quote" style={{ color: '#D9EFF6' }}>{characterData.mainQuote}</p>
-            <p className="character-description">{characterData.description}</p>
+          <p className="main-quote" style={{ color: '#D9EFF6' }}>{characterData.mainQuote}</p>
+          <p className="character-description" dangerouslySetInnerHTML={{ __html: characterData.description }} />
           </div>
+
 
           <div className="btn-group">
             <Link to="/">
