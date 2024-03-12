@@ -41,8 +41,9 @@ npm start
 ## ⚙️ Demo
 
 
+https://github.com/ProCO-Ewha/BSTI-test/assets/144914664/e5debb70-0a42-475e-92e5-a5d23683175d
+
+
+
 ## 🛠️ Tech Stacks
-<img src="https://skillicons.dev/icons?i=react"/>
-<img src="https://skillicons.dev/icons?i=spring"/>
-<img src="https://skillicons.dev/icons?i=aws"/>
-<img src="https://skillicons.dev/icons?i=notion"/>
+<img src="https://skillicons.dev/icons?i=react"/> <img src="https://skillicons.dev/icons?i=spring"/> <img src="https://skillicons.dev/icons?i=aws"/> <img src="https://skillicons.dev/icons?i=notion"/>
