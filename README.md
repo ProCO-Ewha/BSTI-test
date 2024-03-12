@@ -1,14 +1,48 @@
-# 🛠BSTI
+# ⚔️ BSTI ⚔️
 블랙서바이벌 캐릭터 테스트 웹사이트입니다.
 
-나와 플레이 성향이 가장 어울리는 블랙서바이벌 캐릭터는?
+나와 플레이 성향이 가장 어울리는 **블랙서바이벌 캐릭터**는?
 캐릭터 유형으로 확인해보세요!
 
-## Contributors
+```
+cd frontend/
+npm install
+npm start
+```
+
+## 👥 Contributors
 
 | front | back |
 |---|---|
-| 한사랑 | 강승연 |
+| [Sarang-Han](https://github.com/Sarang-Han) | [SYEON10](https://github.com/SYEON10) |
 
-## 현재 최종 보고
-[중중간발표 PPT](https://docs.google.com/presentation/d/1krOS0x8B541HuvMMCdtNhVaXYY_DY-0_/edit?usp=sharing&ouid=106009116602613498747&rtpof=true&sd=true)
+
+## 📂 Directory Structure
+```
+📂 BSTI-TEST
+├─ 📂 .github
+├─ 📂 backend           
+│  └─ 📂 BSTI
+│     ├─ 📂 .gradle
+│     ├─ 📂 bin
+│     ├─ 📂 gradle
+│     └─ 📂 src
+└─ 📂 frontend          
+   ├─ 📂 node_modules
+   ├─ 📂 public
+   ├─ 📂 src
+   ├─ packege-lock.json
+   └─ package.json
+```
+
+## 💡 UI Desgin
+<img width="630" src="https://github.com/ProCO-Ewha/BSTI-test/assets/144914664/e3363449-02bf-4dda-9796-d08bc8468060">
+
+## ⚙️ Demo
+
+
+## 🛠️ Tech Stacks
+<img src="https://skillicons.dev/icons?i=react"/>
+<img src="https://skillicons.dev/icons?i=spring"/>
+<img src="https://skillicons.dev/icons?i=aws"/>
+<img src="https://skillicons.dev/icons?i=notion"/>
